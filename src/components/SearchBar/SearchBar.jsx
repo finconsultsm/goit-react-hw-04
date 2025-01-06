@@ -2,9 +2,7 @@ import { useState } from "react";
 import sc from "./SearchBar.module.css";
 import toast from "react-hot-toast";
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState("");
-
+const SearchBar = ({ onSubmit, query, setQuery }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!query.trim()) {
@@ -12,7 +10,6 @@ const SearchBar = ({ onSubmit }) => {
       return;
     }
     onSubmit(query);
-    setQuery("");
   };
 
   return (
